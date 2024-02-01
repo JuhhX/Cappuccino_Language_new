@@ -1,0 +1,120 @@
+export insertionSort, bubbleSort, selectionSort, quickSort, partition;
+
+//INSERTION SORT
+pub Int[] function insertionSort(Int v[]){
+	Int len = length(v);
+	Int i = 1;
+	Int key = 0;
+	Int j = 0;
+
+	while(i < len){
+		key = v[i];
+		j = i - 1;
+
+		while(j >= 0 && v[j] > key){
+			v[j + 1] = v[j];
+			j = j - 1;
+		}
+
+		v[j+1] = key;
+		i = i + 1;
+	}
+
+	return v;
+}
+
+//BUBBLE SORT
+pub Int[] function bubbleSort(Int v[]){
+	Int i = 0;
+	Int temp;
+	Int len = length(v);
+
+	while(i < len){
+		Int j = 0;
+		while(j < (len - i - 1)){
+			if(v[j] > v[j + 1]){
+				temp = v[j];
+				v[j] = v[j + 1];
+				v[j + 1] = temp;
+			}
+			j = j + 1;
+		}
+		i = i + 1;
+	}
+
+	return v;
+}
+
+//SELECTION SORT
+pub Int[] function selectionSort(Int v[]){
+	Int i = 0;
+	Int j = 0;
+	Int min_idx = 0;
+
+	Int temp = 0;
+	Int len = length(v);
+
+	while(i < (len - 1)){
+		
+		min_idx = i;
+		j = i + 1;
+		while(j < len){
+			
+			if(v[j] < v[min_idx]){
+				min_idx = j;
+			}
+
+			j = j + 1;
+		}
+
+		//SWAP
+		temp = v[min_idx];
+		v[min_idx] = v[i];
+		v[i] = temp;
+
+		i = i + 1;
+	}
+
+	return v;
+}
+
+//PARTIÇÃO DO QUICK SORT
+pub Int function partition(Int v[], Int inicio, Int fim){
+
+	Int pivot = v[inicio];
+	Int i = inicio + 1;
+	Int f = fim;
+
+	while(i <= f){
+		if(v[i] <= pivot){
+			i = i + 1;
+		}
+		else if(pivot < v[f]){
+			f = f - 1;
+		}
+		else(){
+			Int temp = v[i];
+			v[i] = v[f];
+			v[f] = temp;
+
+			i = i + 1;
+			f = f - 1;
+		}
+	}
+
+	v[inicio] = v[f];
+	v[f] = pivot;
+
+	return f;
+}
+
+//QUICK SORT
+pub Void function quickSort(Int v[], Int inicio, Int fim){
+	if(inicio < fim){
+		Int pivotIndex = partition(v, inicio, fim);
+
+		quickSort(vetor, inicio, pivotIndex - 1);
+		quickSort(vetor, pivotIndex + 1, fim);
+
+	}
+}

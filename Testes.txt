@@ -1,0 +1,224 @@
+uni Int int_t;
+uni Int contador = 1;
+
+println("Digite um numero: ");
+print("> ");
+
+Int n1 = readInt();
+int_t = n1;
+
+loop(10){
+	if(int_t % 2 == 0){
+		println("E PAR");
+	}
+	printf("{int_t} x {contador} = {int_t * contador}");
+	contador = contador + 1;
+}
+
+========================================================
+
+Int n1 = readInt();
+
+if(n1 == 0){
+	println("| ZERO |");
+}
+else if(n1 == 1){
+	println("| UM |");
+}
+else if(n1 == 2){
+	println("| DOIS |");
+}
+else(){
+	println("| INFINITO |");
+}
+
+========================================================
+
+uni Int int_t;
+uni Int contador = 1;
+
+println("Digite um numero: ");
+print("> ");
+
+Int n1 = readInt();
+int_t = n1;
+
+loop(10){
+	if(int_t == 2){
+		println("| TABUADA DO 2 |");
+	}
+	else if(int_t == 3){
+		println("| TABUADA DO 3 |");
+	}
+	else if(int_t == 4){
+		println("| TABUADA DO 4 |");
+	}
+	else(){
+		println("| TABUADA QUALQUER |");
+	}
+	
+	printf("{int_t} x {contador} = {int_t * contador}");
+	contador = contador + 1;
+}
+
+========================================================
+
+Int n1 = readInt();
+
+if(n1 % 2 == 0){
+	if(n1 == 0){
+		println("| ZERO |");
+	}
+	else if(n1 == 2){
+		println("| DOIS |");
+	}
+	else(){
+		println("| INFINITO |");
+	}
+}
+else(){
+	if(n1 == 1){
+		println("| UM |");
+	}
+}
+
+========================================================
+
+pub Void function Hello(String a, Int n1) {
+	printf("{a} : {n1 + 1}");
+	if(n1 % 2 == 0){
+		println("E PAR");
+	}
+	else(){
+		println("E IMPAR");
+	}
+}
+
+Int n1 = readInt();
+Hello("Bom dia", n1);
+
+========================================================
+
+Int fn soma(Int n1, Int n2){
+	Int resultado = n1 + n2;
+	printf("{resultado}");
+
+	return 2 + 1;
+}
+
+Double teste = toDouble(soma(10, 3));
+printf("{teste}");
+
+========================================================
+
+import Cappuccino.Math.random;
+
+uni Int option = 1;
+uni Int point = 0;
+
+uni Int generated;
+uni Int user_typed;
+
+println("== JOGO DA ADIVINHACAO ===");
+while(option){
+	generated = random(0, 10);
+
+	println("QUAL NUMERO ESTOU PENSANDO?");
+	print("> ");
+	user_typed = readInt();
+
+	println("");
+	if(user_typed == generated){
+		println("VOCE ACERTOU !!!");
+		point = point + 1;
+	}
+	else(){
+		printf("ERRADO!!");
+		printf("O NUMERO GERADO FOI {generated}");
+	}
+
+	println("Deseja continuar? [0] - Nao  [1] - Sim");
+	print("> ");
+
+	option = readInt();
+
+	println("");
+}
+
+println("");
+printf("FIM");
+
+========================================================
+
+Int vetor[] = [6,13,2,5];
+
+pub Int fn getThird(Int v[]){
+	return v[2];
+}
+
+printf("{getThird(vetor)}");
+
+========================================================
+
+pub Void function insertionSort(Int v[], Int len){
+//	Int i = 1;
+//	Int key = 0;
+//	Int j = 0;
+//
+//	while(i < len){
+//		key = v[i];
+//		j = i - 1;
+//
+//		while(j >= 0 && v[j] > key){
+//			v[j + 1] = v[j];
+//			j = j - 1;
+//		}
+//
+//		v[j+1] = key;
+//		i = i + 1;
+//	}
+
+	printf("{v} : {len}");
+}
+
+Int arr[] = [12, 11, 13, 5, 6];
+Int n = 5;
+
+insertionSort(arr, n);
+
+========================================================
+
+pub Int fn fatorial(Int valor){
+	if(valor == 1 || valor == 0){
+		return 1;
+	}
+	Int r = fatorial(valor - 1);
+	return valor * r;
+}
+
+Int retorno = fatorial(5);
+printf("{retorno}");
+
+========================================================
+
+import MyLib.Pessoa;
+
+Pessoa p;
+
+printf("INSIRA SEU NOME: ");
+print("> ");
+p.nome = readLine();
+
+printf("INSIRA SEU SOBRENOME: ");
+print("> ");
+p.setLastName(readLine());
+
+printf("INSIRA SUA IDADE: ");
+print("> ");
+p.idade = readInt();
+
+printf("INSIRA SEU CPF: ");
+print("> ");
+p.setCPF(readLine());
+
+printf("{p.toString()}")

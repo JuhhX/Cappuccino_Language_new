@@ -1,0 +1,33 @@
+export Pessoa;
+
+class Pessoa{
+	pub String nome;
+	pub Int idade;
+	String sobrenome;
+	String cpf;
+
+	pub Void fn setName(String n){
+		nome = n;
+	}
+
+	pub Void fn setAge(Int i){
+		idade = i;
+	}
+
+	pub Void fn setLastName(String ln){
+		sobrenome = ln;
+	}
+
+	pub Void fn setCPF(String c){
+		cpf = c;
+	}
+
+	pub String fn getLastName(){
+		return sobrenome;
+	}
+
+	pub String fn toString(){
+		String resposta = "Nome completo: {nome} {sobrenome} \nIdade: {idade} \nCPF {cpf}"; 
+		return resposta;
+	}
+}

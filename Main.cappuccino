@@ -1,0 +1,17 @@
+import MyLib.Pessoa;
+
+Pessoa p;
+
+print("INSIRA SEU NOME: \n> ");
+p.nome = readLine();
+
+print("\nINSIRA SEU SOBRENOME: \n> ");
+p.setLastName(readLine());
+
+print("\nINSIRA SUA IDADE: \n> ");
+p.idade = readInt();
+
+print("\nINSIRA SEU CPF: \n> ");
+p.setCPF(readLine());
+
+printf("\n{p.toString()}")
