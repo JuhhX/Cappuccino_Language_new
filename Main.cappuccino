@@ -14,4 +14,4 @@ p.idade = readInt();
 print("\nINSIRA SEU CPF: \n> ");
 p.setCPF(readLine());
 
-printf("\n{p.toString()}")
+printf("\n{p.toString()}");

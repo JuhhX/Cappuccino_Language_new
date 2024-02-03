@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\Julio\Documents\Projetos_CPlus\Cappuccino_new\Cappuccino_new\cappuccino_analyzer;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Julio\Documents\Projetos_CPlus\Cappuccino_new\Cappuccino_new\cappuccino_analyzer\target\debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -108,6 +112,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>cappuccino_analyzer.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,6 +150,7 @@
     <None Include="Sorts.cappuccino" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cappuccino_analyzer\bindings.h" />
     <ClInclude Include="Classes.h" />
     <ClInclude Include="Evaluations.h" />
     <ClInclude Include="Functions.h" />

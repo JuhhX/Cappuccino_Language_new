@@ -8,6 +8,10 @@
 #include "NativeFunctions.h"
 #include "Classes.h"
 
+#include <cappuccino_analyzer.h>
+
+//#include "cappuccino_analyzer/bindings.h"
+
 using namespace std;
 
 ifstream* file_reference;
@@ -49,9 +53,13 @@ void loadMainScope() {
 }
 
 int main() {
-    loadNativeFunctions();
-    loadMainScope();
-    readFile("Main.cappuccino");
+    string filename = "Main.cappuccino";
+
+    if (analyze(filename.c_str())) {
+        loadNativeFunctions();
+        loadMainScope();
+        readFile(filename);
+    }
 }
 
 //LER ARQUIVO

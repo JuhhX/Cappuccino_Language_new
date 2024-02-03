@@ -1171,7 +1171,9 @@ bool isImport(string params) {
                 }
             }
             else {
-                readImportFile(names[0], names[1]);
+                if (analyze((names[0] + ".cappuccino").c_str())) {
+                    readImportFile(names[0], names[1]);
+                }
             }
 
         }

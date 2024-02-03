@@ -12,6 +12,8 @@
 #include "General.h"
 #include "Classes.h"
 
+#include <cappuccino_analyzer.h>
+
 using namespace std;
 
 void loadNativeFunctions();
